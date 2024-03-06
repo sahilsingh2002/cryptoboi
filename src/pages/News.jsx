@@ -1,10 +1,10 @@
 import React from 'react'
-import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
+import { Typography, Row, Col, Card } from 'antd'
 import { useGetCryptoNewsQuery } from '../services/CryptoNewsApi'
 import { Link } from 'react-router-dom'
 import { Loader } from '../components'
-const {Text,Title} = Typography;
-const {Option} = Select;
+const {Title} = Typography;
+
 
 
 function News({simplified}) {
@@ -23,7 +23,7 @@ function News({simplified}) {
               <Card className='news-card'
             hoverable>
               <div className='news-image-container'>
-              <img src = {news.urlToImage} style={{width:"100px", display:"flex", justifyContent:"center"}} />
+              <img src = {news.urlToImage} alt="news-img" style={{width:"100px", display:"flex", justifyContent:"center"}} />
               </div>
                 <Title level={4} className='news-title'>{news.title}</Title>
                 <p>Description: {news.description<100?news.description:news.description.substring(100) + '...'}</p>
